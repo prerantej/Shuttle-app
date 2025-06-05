@@ -20,6 +20,7 @@ export default function Login() {
       } else {
         navigate('/dashboard');
       }
+      window.location.reload();
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed');
     }
@@ -41,6 +42,11 @@ export default function Login() {
         <button className="bg-green-600 text-white w-full p-2 rounded hover:bg-green-700">
           Log In
         </button>
+
+        <p className="mt-4 text-sm text-gray-600 text-center">
+          Don't have an account?{' '}
+          <a href="/signup" className="text-blue-600 hover:underline">Sign up here</a>
+        </p>
       </form>
     </div>
   );

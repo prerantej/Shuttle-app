@@ -6,6 +6,7 @@ export default function Navbar() {
   const handleLogout = () => {
     localStorage.clear();
     navigate("/login");
+    window.location.reload(); // Force logout state refresh
   };
 
   const user = JSON.parse(localStorage.getItem("user"));
